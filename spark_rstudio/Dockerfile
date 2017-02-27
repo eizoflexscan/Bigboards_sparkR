@@ -13,7 +13,7 @@ FROM ubuntu:14.04
 MAINTAINER svenwauters@gmail.com
 
 # Set environment variables
-ENV SPARK_VERSION 1.6.2
+ENV SPARK_VERSION 2.1.0
 ENV PASSWORD rstudio
 
 # Install Java8 and RStudio server dependencies (from relateiq/oracle-java8)
@@ -113,4 +113,3 @@ RUN echo "spark.install.dir=/opt/spark" >> /etc/R/Renviron.site
 #        master    worker   Rstudio
 #     +---------+---------+----+
 EXPOSE 7077 8080 7078 8081 8787
-
