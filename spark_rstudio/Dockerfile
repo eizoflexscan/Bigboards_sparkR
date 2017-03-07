@@ -14,6 +14,7 @@ MAINTAINER svenwauters@gmail.com
 
 # Set environment variables
 ENV SPARK_VERSION 2.1.0
+ENV RSTUDIO_VERSION 1.0.136
 ENV PASSWORD rstudio
 
 # Install Java8 and RStudio server dependencies (from relateiq/oracle-java8)
@@ -79,7 +80,7 @@ RUN R -e 'install.packages(c("tidyr","devtools","dplyr", "ggplot2", "sparklyr"),
 
 	
 # Install RStudio
-RUN wget -O /tmp/rstudio.deb http://download2.rstudio.org/rstudio-server-0.99.902-amd64.deb && \
+RUN wget -O /tmp/rstudio.deb http://download2.rstudio.org/rstudio-server-${RSTUDIO_VERSION}-amd64.deb && \
     gdebi -n /tmp/rstudio.deb && \
     rm /tmp/rstudio.deb    	
 
